@@ -1,0 +1,74 @@
+{
+  "name": "frontend",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@adonisjs/websocket-client": "^1.0.9",
+    "@fortawesome/fontawesome-svg-core": "^1.2.19",
+    "@fortawesome/free-solid-svg-icons": "^5.9.0",
+    "@fortawesome/react-fontawesome": "^0.1.4",
+    "@rocketseat/unform": "^1.4.0",
+    "axios": "^0.19.0",
+    "connected-react-router": "^6.4.0",
+    "date-fns": "^2.0.0-alpha.31",
+    "date-fns-tz": "^1.0.7",
+    "history": "^4.9.0",
+    "jest-websocket-mock": "^1.5.0",
+    "mock-socket": "^8.0.5",
+    "moment": "^2.24.0",
+    "moment-timezone": "^0.5.25",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-modal": "^3.8.1",
+    "react-redux": "^7.0.3",
+    "react-redux-toastr": "^7.5.1",
+    "react-router-dom": "^5.0.1",
+    "react-scripts": "3.0.1",
+    "react-toastify": "^5.2.1",
+    "reactotron-react-js": "^3.3.1",
+    "reactotron-redux": "^3.1.1",
+    "reactotron-redux-saga": "^4.2.2",
+    "redux": "^4.0.1",
+    "redux-saga": "^1.0.2",
+    "reduxsauce": "^1.1.0",
+    "seamless-immutable": "^7.1.4",
+    "styled-components": "^4.3.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/store/ducks/*.js",
+      "src/store/sagas/*.js",
+      "src/*.js",
+      "!src/setupTests.js",
+      "!src/index.js"
+    ]
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "axios-mock-adapter": "^1.17.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "redux-mock-store": "^1.5.3"
+  }
+}
