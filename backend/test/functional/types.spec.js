@@ -1,18 +1,18 @@
-"use strict";
+'use strict'
 
-const User = use("App/Models/User");
+const User = use('App/Models/User')
 
-const { test, trait } = use("Test/Suite")("Types");
+const { test, trait } = use('Test/Suite')('Types')
 
-trait("Test/ApiClient");
-trait("Auth/Client");
+trait('Test/ApiClient')
+trait('Auth/Client')
 
-test("should be able to list all types", async ({ client }) => {
-  const user = await User.find(1);
+test('should be able to list all types', async ({ client }) => {
+  const user = await User.find(1)
   const response = await client
-    .get("/types/1")
+    .get('/types/1')
     .loginVia(user)
-    .end();
+    .end()
 
-  response.assertStatus(200);
-});
+  response.assertStatus(200)
+})
