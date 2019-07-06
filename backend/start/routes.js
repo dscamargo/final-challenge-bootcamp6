@@ -8,6 +8,7 @@ Route.post('forgot_password', 'ForgotPasswordController.store')
 Route.put('forgot_password', 'ForgotPasswordController.update')
 
 Route.group(() => {
+  Route.get('users', 'UserController.show')
   Route.get('products', 'ProductController.index')
 
   Route.get('types/:id', 'TypeController.show')
