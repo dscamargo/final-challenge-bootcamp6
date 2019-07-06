@@ -12,6 +12,7 @@ import { bindActionCreators } from "redux";
 import { Creators as AuthActions } from "../../store/ducks/auth";
 import { Creators as DeliveryActions } from "../../store/ducks/delivery";
 import { Creators as OrdersListActions } from "../../store/ducks/orders";
+import { Creators as UserActions } from "../../store/ducks/user";
 
 import {
   Container,
@@ -29,6 +30,11 @@ import {
 } from "./styles";
 
 class Order extends Component {
+  componentWillMount() {
+    const { loadUserRequest } = this.props;
+
+    loadUserRequest();
+  }
   state = {
     show: true,
     newOrder: false
@@ -189,7 +195,12 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
-    { ...OrdersListActions, ...DeliveryActions, ...AuthActions },
+    {
+      ...UserActions,
+      ...OrdersListActions,
+      ...DeliveryActions,
+      ...AuthActions
+    },
     dispatch
   );
 export default connect(

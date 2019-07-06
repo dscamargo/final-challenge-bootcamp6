@@ -1,4 +1,5 @@
 export const Types = {
+  LOAD_USER_REQUEST: "LOAD_USER/REQUEST",
   LOAD_USER_SUCESS: "LOAD_USER/SUCCESS",
   LOAD_USER_FAILURE: "LOAD_USER/FAILURE"
 };
@@ -6,15 +7,19 @@ export const Types = {
 const INITIAL_STATE = {
   data: {},
   error: false,
-  message: null
+  message: null,
+  loading: false
 };
 
 export default function searchUser(state = INITIAL_STATE, action) {
   switch (action.type) {
+    case Types.LOAD_USER_REQUEST:
+      return { ...state, loading: true };
     case Types.LOAD_USER_SUCESS:
       return {
         ...state,
-        data: action.payload.data
+        data: action.payload.data,
+        loading: false
       };
     case Types.LOAD_USER_FAILURE:
       return {
@@ -28,6 +33,9 @@ export default function searchUser(state = INITIAL_STATE, action) {
 }
 
 export const Creators = {
+  loadUserRequest: () => ({
+    type: Types.LOAD_USER_REQUEST
+  }),
   loadUserSucess: data => ({
     type: Types.LOAD_USER_SUCESS,
     payload: { data }
