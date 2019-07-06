@@ -17,7 +17,6 @@ export function* SignIn(action) {
     const response = yield call(api.post, "sessions", { email, password });
     if (response.data.admin) {
       localStorage.setItem("@Desafio:token", response.data.token);
-      localStorage.setItem("@Desafio:user", response.data.user.username);
       yield put(AuthActions.signInSuccess(response.data.token));
       yield put(push("/"));
       yield put(

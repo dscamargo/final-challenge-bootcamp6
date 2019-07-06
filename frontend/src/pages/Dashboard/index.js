@@ -31,7 +31,6 @@ import {
 class Order extends Component {
   state = {
     show: true,
-    user: null,
     newOrder: false
   };
   registerToSocket = () => {
@@ -51,10 +50,6 @@ class Order extends Component {
     const { getOrdersListRequest } = this.props;
     this.registerToSocket();
 
-    const user = localStorage.getItem("@Desafio:user");
-
-    this.setState({ user });
-
     getOrdersListRequest();
   }
 
@@ -65,14 +60,16 @@ class Order extends Component {
   };
 
   render() {
+    console.tron.log(this.props);
     const {
+      user,
       orders,
       orders: { loading }
     } = this.props;
-    const { user, newOrder } = this.state;
+    const { newOrder } = this.state;
     return (
       <Container>
-        <Header title={user} logoutbutton />
+        <Header title={user.data.username} logoutbutton />
         <InnerContainer>
           {newOrder && (
             <div
@@ -186,6 +183,7 @@ class Order extends Component {
 }
 
 const mapStateToProps = state => ({
+  user: state.user,
   orders: state.orders
 });
 
