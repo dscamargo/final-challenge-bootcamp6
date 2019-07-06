@@ -36,7 +36,7 @@ class Order extends Component {
   };
   registerToSocket = () => {
     const { getOrdersListRequest } = this.props;
-    const socket = ws("ws://localhost:3333");
+    const socket = ws(process.env.REACT_APP_WS_URL);
 
     socket.connect();
 
