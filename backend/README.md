@@ -21,6 +21,4 @@ Para os testes funcionais, utilizar:
 adonis test
 ```
 
-
-
-Douglas Simon Camargo.
+### By Douglas Simon Camargo ###
