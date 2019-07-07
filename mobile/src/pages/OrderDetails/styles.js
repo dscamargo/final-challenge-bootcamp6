@@ -26,6 +26,22 @@ export const Item = styled.View`
   margin-top: 10px;
 `;
 
+export const ItemContainerLeft = styled.View`
+  width: 90px;
+  height: 90px;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const ItemContainerRight = styled.View`
+  flex-direction: column;
+  width: 50%;
+`;
+
+export const ItemImage = styled.Image`
+  width: 70px;
+  height: 70px;
+`;
 export const ItemName = styled.Text`
   font-size: 12px;
   color: #0b2031;
@@ -69,6 +85,11 @@ export const HeaderImage = styled.Image`
   z-index: -1;
 `;
 
+export const HeaderInnerView = styled.View`
+  flex-direction: row;
+  align-items: center;
+`;
+
 export const HeaderText = styled.Text`
   color: #fff;
   font-size: 18px;
@@ -91,6 +112,15 @@ export const OrderInfo = styled.View`
   elevation: 1;
 `;
 
+export const OrderInfoFirstContainer = styled.View`
+  flex-direction: row;
+  justify-content: space-between;
+`;
+
+export const Informations = styled.View`
+  margin-top: 15px;
+`;
+
 export const Address = styled.Text`
   font-size: 14px;
   color: #0b2031;
@@ -100,5 +130,21 @@ export const Address = styled.Text`
 export const Obs = styled.Text`
   color: #0b2031;
   font-size: 13px;
+  font-weight: bold;
+`;
+
+export const RepeatOrderButton = styled.TouchableOpacity`
+  margin-top: 20px;
+  background-color: red;
+  font-size: 16px;
+  border-radius: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  align-items: center;
+`;
+
+export const RepeatOrderText = styled.Text`
+  color: #fff;
   font-weight: bold;
 `;

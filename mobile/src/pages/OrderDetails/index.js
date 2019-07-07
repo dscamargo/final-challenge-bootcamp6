@@ -21,16 +21,24 @@ import {
   Container,
   ItemList,
   Item,
+  ItemContainerLeft,
+  ItemContainerRight,
+  ItemImage,
   ItemName,
   ItemSize,
   ItemPrice,
   HeaderContainer,
+  HeaderInnerView,
   HeaderImage,
   HeaderText,
   HeaderPrice,
   OrderInfo,
+  OrderInfoFirstContainer,
+  Informations,
   Address,
-  Obs
+  Obs,
+  RepeatOrderButton,
+  RepeatOrderText
 } from "./styles";
 
 class OrderDetails extends Component {
@@ -84,12 +92,7 @@ class OrderDetails extends Component {
       <Container>
         <HeaderContainer>
           <HeaderImage source={require("../../assets/header-background.png")} />
-          <View
-            style={{
-              flexDirection: "row",
-              alignItems: "center"
-            }}
-          >
+          <HeaderInnerView>
             <TouchableOpacity onPress={this.handleBack}>
               <FontAwesome5
                 style={{ marginRight: 10 }}
@@ -99,15 +102,13 @@ class OrderDetails extends Component {
               />
             </TouchableOpacity>
             <HeaderText>Pedido #{id}</HeaderText>
-          </View>
+          </HeaderInnerView>
 
           <HeaderPrice>R$ {total}</HeaderPrice>
         </HeaderContainer>
 
         <OrderInfo>
-          <View
-            style={{ flexDirection: "row", justifyContent: "space-between" }}
-          >
+          <OrderInfoFirstContainer>
             <View style={{ flexDirection: "column" }}>
               <Text>Observação</Text>
               <Obs>{observation}</Obs>
@@ -119,29 +120,15 @@ class OrderDetails extends Component {
                 </View>
               )}
             </View>
-          </View>
-          <View style={{ marginTop: 15 }}>
+          </OrderInfoFirstContainer>
+          <Informations>
             <Text>Endereço</Text>
             <Address>{address}</Address>
-          </View>
+          </Informations>
           <View />
-          <TouchableOpacity
-            onPress={this.handleRepeatOrder}
-            style={{
-              marginTop: 20,
-              backgroundColor: "red",
-              fontSize: 16,
-              borderRadius: 10,
-              paddingBottom: 10,
-              paddingEnd: 10,
-              paddingTop: 10,
-              alignItems: "center"
-            }}
-          >
-            <Text style={{ color: "#fff", fontWeight: "bold" }}>
-              REFAZER PEDIDO
-            </Text>
-          </TouchableOpacity>
+          <RepeatOrderButton onPress={this.handleRepeatOrder}>
+            <RepeatOrderText>REFAZER PEDIDO</RepeatOrderText>
+          </RepeatOrderButton>
         </OrderInfo>
         <View style={{ flex: 1 }}>
           <ItemList>
@@ -150,41 +137,27 @@ class OrderDetails extends Component {
               keyExtractor={(item, index) => index.toString()}
               renderItem={({ item }) => (
                 <Item>
-                  <View
-                    style={{
-                      width: 90,
-                      height: 90,
-                      justifyContent: "center",
-                      alignItems: "center"
-                    }}
-                  >
+                  <ItemContainerLeft>
                     {item.size.type.product.name === "Pizza" ||
                     item.size.type.product.name === "Lasanha" ? (
-                      <Image
+                      <ItemImage
                         source={{
                           uri: `https://finalchallengerocketseat.s3.us-east-2.amazonaws.com/${
                             item.size.type.image
                           }`
                         }}
-                        style={{ width: 70, height: 70 }}
                       />
                     ) : (
-                      <Image
+                      <ItemImage
                         source={{
                           uri: `https://finalchallengerocketseat.s3.us-east-2.amazonaws.com/${
                             item.size.image
                           }`
                         }}
-                        style={{ width: 70, height: 70 }}
                       />
                     )}
-                  </View>
-                  <View
-                    style={{
-                      flexDirection: "column",
-                      width: "50%"
-                    }}
-                  >
+                  </ItemContainerLeft>
+                  <ItemContainerRight>
                     {item.size.type.product.name === "Pizza" ||
                     item.size.type.product.name === "Lasanha" ? (
                       <ItemName>
@@ -196,7 +169,7 @@ class OrderDetails extends Component {
 
                     <ItemSize>Tamanho: {item.size.name}</ItemSize>
                     <ItemPrice>R$ {item.size.price}</ItemPrice>
-                  </View>
+                  </ItemContainerRight>
 
                   <View />
                 </Item>

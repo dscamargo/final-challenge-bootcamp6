@@ -21,7 +21,8 @@ import {
   OrderView,
   OrderTitle,
   OrderDate,
-  OrderPrice
+  OrderPrice,
+  IconView
 } from "./styles";
 
 class Profile extends Component {
