@@ -4,7 +4,7 @@ Na pasta do projeto, rodar o comando:
 
 ### `yarn`
 
-para realizar o download da pasta ###node_modules###, de acordo com o ###package.json### do projeto.
+para realizar o download da pasta node_modules de acordo com o package.json do projeto.
 
 Para rodar o servidor, utilizar: 
 
