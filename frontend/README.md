@@ -2,14 +2,22 @@
 
 Na pasta do projeto, rodar o comando:
 
-### `yarn`
+```js
+yarn
+```
 
 para realizar o download da pasta node_modules de acordo com o package.json do projeto.
 
 Para rodar o servidor, utilizar: 
 
-### `yarn start`
+```js
+yarn start
+```
 
 Para rodas os testes da aplicação, utilizar:
 
-### `yarn test`
+```js
+yarn test
+```
+
+Douglas Simon Camargo
