@@ -16,10 +16,13 @@ import {
   Item,
   List,
   ItemText,
+  ItemSuperiorView,
+  ItemInferiorView,
   SizeImage,
   Ingredients,
   InnerContainer,
-  IngredientsText
+  IngredientsText,
+  ItemButton
 } from "./styles";
 
 class Sizes extends Component {
@@ -79,18 +82,8 @@ class Sizes extends Component {
   renderListItem = item => {
     return (
       <Item key={item.id}>
-        <TouchableOpacity
-          style={{ width: "100%" }}
-          onPress={() => this.handleCart(item)}
-        >
-          <View
-            style={{
-              width: "100%",
-              height: 150,
-              justifyContent: "center",
-              alignItems: "center"
-            }}
-          >
+        <ItemButton onPress={() => this.handleCart(item)}>
+          <ItemSuperiorView>
             <SizeImage
               type={item.name}
               source={{
@@ -99,8 +92,8 @@ class Sizes extends Component {
                 }`
               }}
             />
-          </View>
-          <View style={{ justifyContent: "center", alignItems: "center" }}>
+          </ItemSuperiorView>
+          <ItemInferiorView>
             <ItemText
               style={{
                 width: "100%",
@@ -110,8 +103,8 @@ class Sizes extends Component {
               {item.name}
             </ItemText>
             <Text>{`R$ ${item.price}`}</Text>
-          </View>
-        </TouchableOpacity>
+          </ItemInferiorView>
+        </ItemButton>
       </Item>
     );
   };

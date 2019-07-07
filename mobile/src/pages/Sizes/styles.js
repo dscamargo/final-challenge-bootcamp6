@@ -28,6 +28,10 @@ export const Item = styled.View`
   margin-bottom: 4%;
 `;
 
+export const ItemButton = styled.TouchableOpacity`
+  width: 100%;
+`;
+
 export const ItemText = styled.Text`
   font-size: 14px;
   color: #0b2031;
@@ -51,6 +55,18 @@ export const SizeImage = styled.Image`
       : props.type === "35 cm"
       ? "65"
       : "75"};
+`;
+
+export const ItemSuperiorView = styled.View`
+  width: 100%;
+  height: 150px;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const ItemInferiorView = styled.View`
+  justify-content: center;
+  align-items: center;
 `;
 
 export const Ingredients = styled.View`
