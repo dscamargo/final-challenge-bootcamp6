@@ -14,6 +14,15 @@ export const List = styled.View`
   flex-wrap: wrap;
 `;
 
+export const ItemButton = styled.TouchableOpacity`
+  width: 48%;
+`;
+
+export const ItemImage = styled.Image`
+  width: 100px;
+  height: 100px;
+`;
+
 export const Item = styled.View`
   width: 100%;
   height: 200px;

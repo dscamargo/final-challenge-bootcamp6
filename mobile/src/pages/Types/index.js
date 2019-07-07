@@ -1,10 +1,5 @@
 import React, { Component } from "react";
-import {
-  Image,
-  ScrollView,
-  TouchableOpacity,
-  ActivityIndicator
-} from "react-native";
+import { ScrollView, ActivityIndicator } from "react-native";
 import PropTypes from "prop-types";
 
 import { connect } from "react-redux";
@@ -15,7 +10,14 @@ import { Creators as SizesListActions } from "../../store/ducks/sizes";
 import Header from "../../components/Header";
 import NavigationService from "../../services/navigation";
 
-import { Container, List, Item, ItemText } from "./styles";
+import {
+  Container,
+  List,
+  ItemButton,
+  Item,
+  ItemImage,
+  ItemText
+} from "./styles";
 
 class Types extends Component {
   static propTypes = {
@@ -56,17 +58,12 @@ class Types extends Component {
             <List>
               {types.data &&
                 types.data.map(type => (
-                  <TouchableOpacity
+                  <ItemButton
                     key={type.id}
                     onPress={() => this.handleSize(type)}
-                    style={{ width: "48%" }}
                   >
                     <Item>
-                      <Image
-                        style={{
-                          width: 100,
-                          height: 100
-                        }}
+                      <ItemImage
                         source={{
                           uri: `https://finalchallengerocketseat.s3.us-east-2.amazonaws.com/${
                             type.image
@@ -75,7 +72,7 @@ class Types extends Component {
                       />
                       <ItemText>{type.name}</ItemText>
                     </Item>
-                  </TouchableOpacity>
+                  </ItemButton>
                 ))}
             </List>
           )}
