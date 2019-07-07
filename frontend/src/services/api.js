@@ -1,8 +1,6 @@
 import axios from "axios";
 import store from "../store";
 
-console.tron.log(process.env.REACT_APP_API_URL);
-
 const api = axios.create({
   baseURL: process.env.REACT_APP_API_URL
 });

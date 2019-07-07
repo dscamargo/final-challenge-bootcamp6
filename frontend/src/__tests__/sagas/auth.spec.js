@@ -35,7 +35,7 @@ describe("SignIn Saga", () => {
   });
   it("should not be able to authenticate when user isn't administrador", async () => {
     const dispatched = [];
-    const data = { email: "email@email.com.br", password: "email" };
+    const data = { email: "douglas@email.com.br", password: "douglas" };
     const { email, password } = data;
 
     apiMock.onPost("/sessions", { email, password }).reply(401, {

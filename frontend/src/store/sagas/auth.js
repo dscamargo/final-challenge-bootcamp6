@@ -36,6 +36,7 @@ export function* SignIn(action) {
       );
     }
   } catch (err) {
+    yield put(AuthActions.signInFailure("Erro na autenticação"));
     yield put(
       toastrActions.add({
         type: "error",
@@ -43,6 +44,5 @@ export function* SignIn(action) {
         message: "Credenciais inválidas."
       })
     );
-    yield put(AuthActions.signInFailure("Erro na autenticação"));
   }
 }
