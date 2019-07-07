@@ -16,15 +16,19 @@ import NavigationService from "../../services/navigation";
 
 import {
   Container,
+  ItemListView,
   ItemList,
   Item,
   ItemImage,
   ItemName,
   ItemSize,
   ItemPrice,
+  OptionsView,
   OrderButton,
+  OrderButtonInnerView,
   TextOrderButton,
   Header,
+  HeaderView,
   HeaderText,
   HeaderImage,
   HeaderPrice,
@@ -94,19 +98,19 @@ class Cart extends Component {
     console.tron.log(cart);
     return (
       <Container>
-        <Header style={{ flexDirection: "row" }}>
+        <Header>
           <HeaderImage source={require("../../assets/header-background.png")} />
-          <View style={{ flexDirection: "row", alignItems: "center" }}>
+          <HeaderView>
             <TouchableOpacity onPress={this.handleModal}>
               <FontAwesome5 name={"arrow-left"} color={"white"} size={15} />
             </TouchableOpacity>
             <HeaderText>Carrinho</HeaderText>
-          </View>
+          </HeaderView>
           <View>
             <HeaderPrice>R$ {total}</HeaderPrice>
           </View>
         </Header>
-        <View style={{ flex: 1 }}>
+        <ItemListView>
           <ItemList>
             <FlatList
               data={cart}
@@ -119,7 +123,6 @@ class Cart extends Component {
                         item.image
                       }`
                     }}
-                    style={{ width: 70, height: 70 }}
                   />
                   <View
                     style={{
@@ -150,31 +153,27 @@ class Cart extends Component {
               )}
             />
           </ItemList>
-        </View>
+        </ItemListView>
 
-        <View
-          style={{
-            flexDirection: "row",
-            justifyContent: "space-between",
-            paddingLeft: 10,
-            paddingRight: 10,
-            alignItems: "center",
-            marginBottom: 10
-          }}
-        >
+        <OptionsView>
           <TouchableOpacity
             onPress={this.handleBuyMore}
             style={{ marginLeft: 10 }}
           >
             <FontAwesome5 name={"cart-plus"} size={20} color={"#706e7b"} />
           </TouchableOpacity>
+
           <OrderButton onPress={this.handlePlaceOrder}>
-            <TextOrderButton>
-              Realizar Pedido{"    "}
-              <FontAwesome5 name={"arrow-right"} />
-            </TextOrderButton>
+            <OrderButtonInnerView>
+              <TextOrderButton>Realizar Pedido</TextOrderButton>
+              <FontAwesome5
+                color={"#fff"}
+                name={"arrow-right"}
+                style={{ marginLeft: 10 }}
+              />
+            </OrderButtonInnerView>
           </OrderButton>
-        </View>
+        </OptionsView>
 
         <Modal isVisible={visible}>
           <ModalContainer>

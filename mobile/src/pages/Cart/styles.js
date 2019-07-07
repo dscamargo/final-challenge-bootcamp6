@@ -5,6 +5,10 @@ export const Container = styled.View`
   background: #e6e6e6;
 `;
 
+export const ItemListView = styled.View`
+  flex: 1;
+`;
+
 export const ItemList = styled.View`
   width: 90%;
   margin: 0 auto;
@@ -24,7 +28,10 @@ export const Item = styled.View`
   margin-bottom: 10px;
 `;
 
-export const ItemImage = styled.Image``;
+export const ItemImage = styled.Image`
+  width: 70px;
+  height: 70px;
+`;
 
 export const ItemName = styled.Text`
   font-size: 12px;
@@ -45,12 +52,28 @@ export const ItemPrice = styled.Text`
   text-align: left;
 `;
 
+export const OptionsView = styled.View`
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+`;
+
 export const OrderButton = styled.TouchableOpacity`
+  width: 200px;
   background: red;
   border-radius: 20px;
   padding: 10px 30px;
   align-items: center;
   margin-right: 5px;
+`;
+
+export const OrderButtonInnerView = styled.View`
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const TextOrderButton = styled.Text`
@@ -63,6 +86,11 @@ export const Header = styled.View`
   padding: 20px;
   justify-content: space-between;
   width: 100%;
+`;
+
+export const HeaderView = styled.View`
+  flex-direction: row;
+  align-items: center;
 `;
 
 export const HeaderImage = styled.Image`
