@@ -4,6 +4,7 @@ Para o funcionamento correto, siga os seguintes passos:
 
 ```js
 
+npm install
 adonis migration:run
 adonis seed
 
