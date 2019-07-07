@@ -16,7 +16,7 @@ class OrdersSchema extends Schema {
         .onUpdate('CASCADE')
         .onDelete('CASCADE')
         .notNullable()
-      table.string('observation').notNullable()
+      table.text('observation').notNullable()
       table.string('total').notNullable()
       table.string('address').notNullable()
       table.string('payment_method').notNullable()
