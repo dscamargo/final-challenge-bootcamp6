@@ -19,3 +19,7 @@ Para os testes funcionais, utilizar:
 ```js
 adonis test
 ```
+
+
+
+Douglas Simon Camargo.
