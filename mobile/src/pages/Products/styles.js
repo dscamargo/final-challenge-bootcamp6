@@ -39,6 +39,8 @@ export const ImageView = styled.View`
 export const ItemImage = styled.Image`
   border-radius: 10px;
   background: black;
+  width: 60px;
+  height: 60px;
 `;
 
 export const Title = styled.Text`

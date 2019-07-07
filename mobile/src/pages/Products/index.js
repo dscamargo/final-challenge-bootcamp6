@@ -73,7 +73,6 @@ class Products extends Component {
                 <Item>
                   <ImageView>
                     <ItemImage
-                      style={{ width: 60, height: 60 }}
                       source={{
                         uri: `https://finalchallengerocketseat.s3.us-east-2.amazonaws.com/${
                           item.image
