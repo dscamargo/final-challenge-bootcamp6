@@ -2,21 +2,19 @@
 
 Para o funcionamento correto, siga os seguintes passos:
 
-
 ```js
 
 adonis migration:run
 adonis seed
 
 ```
-
-e então:
+Para o colocar o servidor online, utilizar: 
 
 ```js
 adonis serve --dev
 ```
 
-para rodar os testes poderá ser usado o comando:
+Para os testes funcionais, utilizar: 
 
 ```js
 adonis test
