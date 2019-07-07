@@ -26,10 +26,13 @@ import {
   OrderTitle,
   OrderPrice,
   Item,
+  ItemLeftContainer,
+  ItemRightContainer,
   Obs,
   NewOrderContainer,
   NewOrderNotification,
-  OrderInfoContainer
+  OrderInfoContainer,
+  OrderDeliveryText
 } from "./styles";
 
 class Order extends Component {
@@ -104,10 +107,9 @@ class Order extends Component {
                     </OrderInfoContainer>
 
                     {order.outToDelivery ? (
-                      <h2 style={{ color: "green" }}>
-                        {" "}
-                        <FontAwesomeIcon icon={faCheck} /> Pedido entregue{" "}
-                      </h2>
+                      <OrderDeliveryText>
+                        <FontAwesomeIcon icon={faCheck} /> Pedido entregue
+                      </OrderDeliveryText>
                     ) : (
                       <button onClick={() => this.getOutToDelivery(order.id)}>
                         Saiu para entrega
@@ -118,14 +120,7 @@ class Order extends Component {
                     {order.items &&
                       order.items.map(item => (
                         <Item key={item.id}>
-                          <div
-                            style={{
-                              width: "40%",
-                              alignItems: "center",
-                              justifyContent: "center",
-                              display: "flex"
-                            }}
-                          >
+                          <ItemLeftContainer>
                             {item.size.type.product.name === "Pizza" ||
                             item.size.type.product.name === "Lasanha" ? (
                               <img
@@ -142,16 +137,8 @@ class Order extends Component {
                                 alt="Imagem"
                               />
                             )}
-                          </div>
-                          <div
-                            style={{
-                              width: "60%",
-                              flexDirection: "column",
-                              display: "flex",
-                              justifyContent: "center",
-                              textAlign: "left"
-                            }}
-                          >
+                          </ItemLeftContainer>
+                          <ItemRightContainer>
                             {item.size.type.product.name === "Pizza" ||
                             item.size.type.product.name === "Lasanha" ? (
                               <h2>
@@ -162,7 +149,7 @@ class Order extends Component {
                               <h2>{item.size.type.name}</h2>
                             )}
                             <h3>{`Tamanho: ${item.size.name}`}</h3>
-                          </div>
+                          </ItemRightContainer>
                         </Item>
                       ))}
                   </ItemList>

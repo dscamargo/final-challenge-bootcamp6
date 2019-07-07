@@ -93,6 +93,11 @@ export const OrderInfo = styled.div`
   }
 `;
 
+export const OrderDeliveryText = styled.span`
+  color: green;
+  font-weight: bold;
+`;
+
 export const OrderInfoContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -179,6 +184,21 @@ export const Item = styled.div`
     color: #706e7b;
     font-weight: normal;
   }
+`;
+
+export const ItemLeftContainer = styled.div`
+  width: 40%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+`;
+
+export const ItemRightContainer = styled.div`
+  width: 60%;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  text-align: left;
 `;
 
 export const Obs = styled.div`
