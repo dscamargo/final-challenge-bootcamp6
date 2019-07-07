@@ -94,14 +94,7 @@ class Sizes extends Component {
             />
           </ItemSuperiorView>
           <ItemInferiorView>
-            <ItemText
-              style={{
-                width: "100%",
-                textAlign: "center"
-              }}
-            >
-              {item.name}
-            </ItemText>
+            <ItemText>{item.name}</ItemText>
             <Text>{`R$ ${item.price}`}</Text>
           </ItemInferiorView>
         </ItemButton>

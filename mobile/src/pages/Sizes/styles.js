@@ -36,6 +36,8 @@ export const ItemText = styled.Text`
   font-size: 14px;
   color: #0b2031;
   font-weight: bold;
+  width: 100%;
+  text-align: center;
 `;
 
 export const SizeImage = styled.Image`
