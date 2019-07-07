@@ -93,6 +93,28 @@ export const OrderInfo = styled.div`
   }
 `;
 
+export const OrderInfoContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const NewOrderContainer = styled.div`
+  width: 100%;
+  height: 30px;
+  border-radius: 10px;
+  background: #0b2031;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  padding: 20px;
+`;
+
+export const NewOrderNotification = styled.h1`
+  font-size: 14px;
+  color: #fff;
+`;
+
 export const MainList = styled.div`
   display: flex;
   flex-wrap: wrap;

@@ -26,7 +26,10 @@ import {
   OrderTitle,
   OrderPrice,
   Item,
-  Obs
+  Obs,
+  NewOrderContainer,
+  NewOrderNotification,
+  OrderInfoContainer
 } from "./styles";
 
 class Order extends Component {
@@ -78,21 +81,9 @@ class Order extends Component {
         <Header title={user.data.username} logoutbutton />
         <InnerContainer>
           {newOrder && (
-            <div
-              style={{
-                width: "100%",
-                height: 30,
-                borderRadius: 10,
-                backgroundColor: "#0b2031",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                marginTop: 10,
-                padding: 20
-              }}
-            >
-              <h1 style={{ fontSize: 14, color: "#fff" }}>Novo Pedido</h1>
-            </div>
+            <NewOrderContainer>
+              <NewOrderNotification>Novo Pedido</NewOrderNotification>
+            </NewOrderContainer>
           )}
 
           <Title>Últimos pedidos {loading && <Loading />}</Title>
@@ -102,7 +93,7 @@ class Order extends Component {
               orders.data.map(order => (
                 <OrderContainer key={order.id}>
                   <OrderInfo>
-                    <div style={{ display: "flex", flexDirection: "column" }}>
+                    <OrderInfoContainer>
                       <OrderTitle>
                         Pedido <span>#{order.id}</span> - {order.user.username}
                       </OrderTitle>
@@ -110,7 +101,7 @@ class Order extends Component {
                         {moment(order.created_at).fromNow()}
                       </OrderTime>
                       <OrderPrice>R$ {order.total}</OrderPrice>
-                    </div>
+                    </OrderInfoContainer>
 
                     {order.outToDelivery ? (
                       <h2 style={{ color: "green" }}>
