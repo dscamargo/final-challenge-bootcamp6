@@ -26,6 +26,10 @@ export const Order = styled.View`
   justify-content: space-between;
 `;
 
+export const OrderView = styled.View`
+  flex-direction: column;
+`;
+
 export const OrderTitle = styled.Text`
   font-size: 12px;
   color: #0b2031;
@@ -43,6 +47,11 @@ export const OrderPrice = styled.Text`
   color: #0b2031;
   font-weight: bold;
   text-align: left;
+`;
+
+export const IconView = styled.View`
+  justify-content: center;
+  align-items: center;
 `;
 
 export const LogoutButton = styled.TouchableOpacity`

@@ -18,6 +18,7 @@ import {
   InnerContainer,
   OrderList,
   Order,
+  OrderView,
   OrderTitle,
   OrderDate,
   OrderPrice
@@ -38,7 +39,7 @@ class Profile extends Component {
     const { orders } = this.props;
     return (
       <Container>
-        <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+        <View>
           <Header
             logoutbutton
             normalScreen
@@ -60,11 +61,7 @@ class Profile extends Component {
                     }}
                   >
                     <Order>
-                      <View
-                        style={{
-                          flexDirection: "column"
-                        }}
-                      >
+                      <OrderView>
                         <OrderTitle>Pedido #{item.id}</OrderTitle>
 
                         <OrderDate>
@@ -74,19 +71,14 @@ class Profile extends Component {
                         </OrderDate>
 
                         <OrderPrice>R$ {item.total}</OrderPrice>
-                      </View>
-                      <View
-                        style={{
-                          justifyContent: "center",
-                          alignItems: "center"
-                        }}
-                      >
+                      </OrderView>
+                      <IconView>
                         <FontAwesome5
                           size={30}
                           name={"angle-right"}
                           color={"black"}
                         />
-                      </View>
+                      </IconView>
                     </Order>
                   </TouchableOpacity>
                 </View>
