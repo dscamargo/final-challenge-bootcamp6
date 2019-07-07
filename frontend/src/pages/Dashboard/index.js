@@ -29,6 +29,7 @@ import {
   ItemLeftContainer,
   ItemRightContainer,
   Obs,
+  PaymentMethod,
   NewOrderContainer,
   NewOrderNotification,
   OrderInfoContainer,
@@ -153,6 +154,10 @@ class Order extends Component {
                         </Item>
                       ))}
                   </ItemList>
+
+                  <PaymentMethod>
+                    Método de pagamento: <span>{order.payment_method}</span>
+                  </PaymentMethod>
 
                   <Obs>
                     Observações: <span>{order.observation}</span>

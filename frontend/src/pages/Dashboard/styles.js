@@ -201,9 +201,19 @@ export const ItemRightContainer = styled.div`
   text-align: left;
 `;
 
-export const Obs = styled.div`
+export const Obs = styled.h2`
   font-size: 14px;
   color: #706e7b;
+  font-weight: normal;
+  margin-top: 20px;
+  span {
+    font-weight: bold;
+  }
+`;
+
+export const PaymentMethod = styled.h2`
+  font-size: 14px;
+  color: #0b2031;
   font-weight: normal;
   margin-top: 20px;
   span {
