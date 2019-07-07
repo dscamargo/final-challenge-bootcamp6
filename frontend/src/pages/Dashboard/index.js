@@ -28,8 +28,7 @@ import {
   Item,
   ItemLeftContainer,
   ItemRightContainer,
-  Obs,
-  PaymentMethod,
+  Information,
   NewOrderContainer,
   NewOrderNotification,
   OrderInfoContainer,
@@ -73,7 +72,6 @@ class Order extends Component {
   };
 
   render() {
-    console.tron.log(this.props);
     const {
       user,
       orders,
@@ -155,13 +153,17 @@ class Order extends Component {
                       ))}
                   </ItemList>
 
-                  <PaymentMethod>
-                    Método de pagamento: <span>{order.payment_method}</span>
-                  </PaymentMethod>
+                  <Information>
+                    Endereço: <span>{order.address}</span>
+                  </Information>
 
-                  <Obs>
+                  <Information>
+                    Método de pagamento: <span>{order.payment_method}</span>
+                  </Information>
+
+                  <Information>
                     Observações: <span>{order.observation}</span>
-                  </Obs>
+                  </Information>
                 </OrderContainer>
               ))}
           </OrderList>
